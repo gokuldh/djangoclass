@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>Django Blog</title>
 </head>
 <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+
+{% for singlepost in posts %}
+    <div class="col-md-4">
+        <p>Published on: {{ singlepost.published_date }}</p>
+        <h2 style="color: #6DDCBD">{{ singlepost.title }}</h2>
+        <p>{{ singlepost.text }}</p>
+        <br>
+    </div>
+{% endfor %}
+
 </body>
 </html>
+
+<!--
+1: singlepost
+2: singlepost
+
+-->
